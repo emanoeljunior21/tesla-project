@@ -9,6 +9,11 @@
 
 html {
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 video,
@@ -23,10 +28,27 @@ video,
   filter: brightness(60%);
 }
 
+.mascara-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.5)
+  );
+  z-index: -1;
+}
+
 .logo {
   filter: brightness(100%);
   position: fixed;
   width: 120px;
+  z-index: 10;
+  top: 20px;
+  left: 20px;
 }
 
 .item {
@@ -37,116 +59,216 @@ video,
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
+  padding: 80px 20px 40px;
 }
 
 h1 {
   color: white;
   font-size: 50px;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sub-titulo {
   color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .info-carro {
   margin-top: 80px;
   text-align: center;
+  z-index: 2;
 }
 
 .rodape {
   text-align: center;
+  z-index: 2;
 }
 
 button {
-  background-color: rgba(34, 34, 34, 0.8);
+  background-color: rgba(34, 34, 34, 0.9);
   color: white;
-  padding: 7px 80px;
+  padding: 12px 80px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 8px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: rgba(34, 34, 34, 1);
 }
 
 .test-drive {
   color: black;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.test-drive:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .texto-rodape {
   color: white;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 15px;
+  opacity: 0.8;
 }
 
 .formulario {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
   width: 80%;
   max-width: 600px;
   height: 80vh;
   max-height: 600px;
   background: white;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  padding: 40px 20px 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  transition: all 0.3s ease-in-out;
   overflow-y: auto;
   opacity: 0;
   visibility: hidden;
+  border-radius: 10px;
 }
 
 .formulario.visivel {
   opacity: 1;
   visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .formulario .fechar {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: rgba(34, 34, 34, 0.8);
+  background-color: rgba(34, 34, 34, 0.9);
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 8px 15px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.mascara-formulario {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.mascara-formulario.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  button {
+    padding: 12px 70px;
+  }
 }
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 40px;
+    font-size: 36px;
+  }
+
+  .sub-titulo {
+    font-size: 16px;
   }
 
   button {
-    padding: 7px 60px;
+    padding: 10px 50px;
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 100px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .item {
+    padding: 70px 15px 30px;
   }
 
   .formulario {
     width: 90%;
+    padding: 35px 15px 15px;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .sub-titulo {
+    font-size: 14px;
   }
 
   .info-carro {
-    margin-top: 50px;
+    margin-top: 60px;
   }
 
   button {
-    padding: 7px 40px;
+    padding: 10px 40px;
+    font-size: 13px;
+    display: block;
+    width: 80%;
+    margin: 8px auto;
+  }
+
+  .logo {
+    width: 80px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .item {
+    padding: 60px 10px 20px;
   }
 
   .formulario {
     width: 95%;
+    height: 85vh;
+    padding: 30px 10px 10px;
   }
 
   .formulario .fechar {
-    padding: 5px 8px;
-    font-size: 14px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 90%;
+    padding: 8px 20px;
   }
 }

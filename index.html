@@ -1,60 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tesla - Veículos elétricos de alto desempenho. Conheça o Model Y, Model 3 e Model X."
+    />
+    <meta
+      name="keywords"
+      content="Tesla, carros elétricos, Model Y, Model 3, Model X, veículos sustentáveis"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Tesla - Réplica</title>
-</head>
+  </head>
 
-<body>
-    <img src="./assets/logo.png" alt="logo da tesla" class="logo">
+  <body>
+    <header>
+      <img src="./assets/logo.png" alt="logo da tesla" class="logo" />
+    </header>
 
-    <ul class="lista">
-
+    <main>
+      <ul class="lista">
         <li class="item">
-            <video src="./assets/model-y.mp4" muted loop autoplay></video>
+          <video src="./assets/model-y.mp4" muted loop autoplay></video>
+          <div class="mascara-video"></div>
 
-            <div class="info-carro">
-                <h1>Model Y</h1>
-                <p class="sub-titulo">Parcelar a partir de $499,99 dólares</p>
-            </div>
+          <div class="info-carro">
+            <h1>Model Y</h1>
+            <p class="sub-titulo">Parcelar a partir de $499,99 dólares</p>
+          </div>
 
-            <div class="rodape">
-                <button onclick="aparecerFormulario()">Comprar Agora</button>
-                <button class="test-drive">Faça um Test-Drive</button>
-                <p class="texto-rodape">Não garantimos seu veículo imediatamente.Consultar estoque*</p>
-            </div>
+          <div class="rodape">
+            <button onclick="aparecerFormulario()">Comprar Agora</button>
+            <button class="test-drive">Faça um Test-Drive</button>
+            <p class="texto-rodape">
+              Não garantimos seu veículo imediatamente. Consultar estoque*
+            </p>
+          </div>
         </li>
 
-
         <li class="item">
-            <img src="./assets/model-3.png" class="img-tesla" alt="imagem model 3">
+          <img
+            src="./assets/model-3.png"
+            class="img-tesla"
+            alt="imagem model 3"
+          />
+          <div class="mascara-video"></div>
 
-            <div class="info-carro">
-                <h1>Model 3</h1>
-                <p class="sub-titulo">Compre agora o seu Tesla</p>
-            </div>
+          <div class="info-carro">
+            <h1>Model 3</h1>
+            <p class="sub-titulo">Compre agora o seu Tesla</p>
+          </div>
+
+          <div class="rodape">
+            <button onclick="aparecerFormulario()">Comprar Agora</button>
+            <button class="test-drive">Faça um Test-Drive</button>
+          </div>
         </li>
 
-
         <li class="item">
-            <img src="./assets/model-x.png" class="img-tesla" alt="imagem model x">
+          <img
+            src="./assets/model-x.png"
+            class="img-tesla"
+            alt="imagem model x"
+          />
+          <div class="mascara-video"></div>
 
-            <div class="info-carro">
-                <h1>Model X</h1>
-                <p class="sub-titulo">Parcelar a partir de $499,99 dólares</p>
-            </div>
+          <div class="info-carro">
+            <h1>Model X</h1>
+            <p class="sub-titulo">Parcelar a partir de $499,99 dólares</p>
+          </div>
+
+          <div class="rodape">
+            <button onclick="aparecerFormulario()">Comprar Agora</button>
+            <button class="test-drive">Faça um Test-Drive</button>
+          </div>
         </li>
-    </ul>
+      </ul>
+    </main>
 
     <div class="formulario">
-        <button class="fechar" onclick="desaparecerFormulario()">Fechar</button>
-        <script type="text/javascript" src="https://form.jotform.com/jsform/241927664739067"></script>
+      <button class="fechar" onclick="desaparecerFormulario()">Fechar</button>
+      <script
+        type="text/javascript"
+        src="https://form.jotform.com/jsform/241927664739067"
+      ></script>
     </div>
 
-</body>
-<script src="./script.js"></script>
+    <div class="mascara-formulario" onclick="desaparecerFormulario()"></div>
 
+    <script src="./script.js"></script>
+  </body>
 </html>
